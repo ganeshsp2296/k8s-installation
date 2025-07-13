@@ -127,7 +127,7 @@ fi
 # Running this script with curl command
 
 # To setp up master node run below curl command
-# curl -s https://raw.githubusercontent.com/jaintpharsha/Devops-ITD-Aug-2023/main/Kubernetes/Installation/cluster_setup_using_kubeadm.sh | bash -s master
+# curl -s https://raw.githubusercontent.com/ganeshsp2296/k8s-installation/refs/heads/main/k8s_install_kubeadm.sh | bash -s master
 
 # To setp up worker node run below curl command
-# curl -s https://raw.githubusercontent.com/jaintpharsha/Devops-ITD-Aug-2023/main/Kubernetes/Installation/cluster_setup_using_kubeadm.sh | bash -s worker
+# curl -s https://raw.githubusercontent.com/ganeshsp2296/k8s-installation/refs/heads/main/k8s_install_kubeadm.sh | bash -s worker
