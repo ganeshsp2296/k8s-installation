@@ -50,9 +50,10 @@ echo -e "\n-------------------------- APT transport for downloading pkgs via HTT
 sudo apt-get install -y apt-transport-https
 
 echo -e "\n--------------------------  Adding Kubernetes APT repo --------------------------\n"
-sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] http://apt.kubernetes.io/ kubernetes-xenial main" | \
-    sudo tee /etc/apt/sources.list.d/kubernetes.list > /dev/null
+sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | \
+  sudo tee /etc/apt/sources.list.d/kubernetes.list
+
     
 
 echo -e "\n-------------------------- Installing docker.io --------------------------\n"
