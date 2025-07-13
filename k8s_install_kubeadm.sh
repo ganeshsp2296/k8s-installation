@@ -49,11 +49,11 @@ sudo apt update
 echo -e "\n-------------------------- APT transport for downloading pkgs via HTTPS --------------------------\n"
 sudo apt-get install -y apt-transport-https
 
-sudo su - <<EOF
-echo -e "\n--------------------------  Adding K8S packgaes to APT list --------------------------\n"
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add
-echo 'deb http://apt.kubernetes.io/ kubernetes-xenial main' > /etc/apt/sources.list.d/kubernetes.list
-EOF
+echo -e "\n--------------------------  Adding Kubernetes APT repo --------------------------\n"
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] http://apt.kubernetes.io/ kubernetes-xenial main" | \
+    sudo tee /etc/apt/sources.list.d/kubernetes.list > /dev/null
+    
 
 echo -e "\n-------------------------- Installing docker.io --------------------------\n"
 sudo apt update
